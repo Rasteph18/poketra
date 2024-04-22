@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/css/style.css" th:href="@{/css/style.css}">
+    <title>Détails Stock Matière</title>
+</head>
+<body>
+    <!-- sidebar -->
+    <div th:replace="~{fragments/sidebar.html}"></div>
+
+    <main class="w-[calc(100%-256px)] bg-gray-50 ml-64 min-h-screen">
+        <div class="container mx-auto">
+            <div class="title">
+                <h3 class="flex justify-center">Détails Stock Matière</h3>
+            </div>
+            <div class="flex justify-center mt-9">
+                <table>
+                    <thead>
+                        <tr>
+                            <th class="text-white bg-gray-950">Matière</th>
+                            <th class="text-white bg-gray-950">Quantité restant</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr th:each="dsm : ${detailsStockMatiere}">
+                            <td th:text="${dsm.nom}"></td>
+                            <td th:text="${dsm.reste}"></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </main>
+
+    <script src="../static/js/script.js" th:src="@{/js/script.js}"></script>
+</body>
+</html>

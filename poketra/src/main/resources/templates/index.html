@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/css/style.css" th:href="@{/css/style.css}">
+    <title>Index</title>
+</head>
+<body>
+    <!-- sidebar -->
+    <div th:replace="~{fragments/sidebar.html}"></div>
+
+    <main class="w-[calc(100%-256px)] bg-gray-50 ml-64 min-h-screen">
+        <div class="container mx-auto">
+            <div class="flex justify-center items-center">
+                <h3>Fabrication et vente de poketra</h3>
+            </div>
+        </div>
+    </main>
+    
+
+    <script src="../static/js/script.js" th:src="@{/js/script.js}"></script>
+</body>
+</html>

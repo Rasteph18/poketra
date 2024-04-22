@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/css/style.css" th:href="@{/css/style.css}">
+    <title>Insertion Salaire Personnel</title>
+</head>
+<body>
+    <!-- sidebar -->
+    <div th:replace="~{fragments/sidebar.html}"></div>
+
+    <main class="w-[calc(100%-256px)] bg-gray-50 ml-64 min-h-screen">
+        <div class="container mx-auto">
+            <div class="title flex justify-center">
+                <h3>Insertion Salaire Personnel</h3>
+            </div>
+            <div class="form-card mx-auto mt-4">
+                <form th:action="@{/insertSalairePersonnel}" method="post" class="space-y-8">
+                    <div class="input-field">
+                        <label for="idPersonnel" class="label">Personnel </label>
+                        <select name="idPersonnel" id="idPersonnel" class="input">
+                            <option th:each="personnel : ${allPersonnel}" th:value="${personnel.id}" th:text="${personnel.description}"></option>
+                        </select>
+                    </div>
+
+                    <div class="input-field">
+                        <label for="salaire" class="label">Salaire </label>
+                        <input type="number" name="salaire" id="salaire" class="input">
+                    </div>
+
+                    <div class="button flex justify-end">
+                        <button type="submit" class="btn">Valider</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <script src="../static/js/script.js" th:src="@{/js/script.js}"></script>
+</body>
+</html>

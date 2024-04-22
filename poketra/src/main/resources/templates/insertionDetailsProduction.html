@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/css/style.css" th:href="@{/css/style.css}">
+    <title>Insertion Détails Production</title>
+</head>
+<body>
+    <!-- sidebar -->
+    <div th:replace="~{fragments/sidebar.html}"></div>
+
+    <main class="w-[calc(100%-256px)] bg-gray-50 ml-64 min-h-screen">
+        <div class="container mx-auto">
+            <div class="title flex justify-center">
+                <h3>Insertion Détails Production</h3>
+            </div>
+            <div class="grid grid-cols-4 gap-3">
+                <div class="content-form col-span-2">
+                    <div class="form-card mx-auto mt-4">
+                        <form th:action="@{/controlDetailsProduction}" method="post" class="space-y-6">
+                            <div class="input-field">
+                                <label for="idPersonnel" class="label">Personnel</label>
+                                <select name="idPersonnel" id="idPersonnel" class="input">
+                                    <option th:each="personnel : ${allPersonnel}" th:value="${personnel.id}" th:text="${personnel.description}"></option>
+                                </select>
+                            </div>
+        
+                            <div class="input-field">
+                                <label for="nb" class="label">Nombre</label>
+                                <input type="number" name="nbPersonnel" id="nb" class="input">
+                            </div>
+        
+                            <div class="input-field">
+                                <label for="heureTravail" class="label">Dure travail</label>
+                                <input type="number" name="heureTravail" id="heureTravail" class="input">
+                            </div>
+        
+                            <div class="button flex justify-center">
+                                <button type="submit" class="btn">Valider</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+                <div class="content-table col-span-2 mt-4 w-min">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Personnel</th>
+                                <th>Nombre</th>
+                                <th>Duré</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            <tr th:each="details : ${listDetailsPorduction}">
+                                <td th:text="${details.personnel.description}"></td>
+                                <td th:text="${details.nbPersonnel}"></td>
+                                <td th:text="${details.heureTravail}"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <div class="validation">
+                        <a th:href="@{/insertDetailsProduction}" class="btn bg-red-600 flex justify-center mt-5">Finir</a>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </main>
+
+    <script src="../static/js/script.js" th:src="@{/js/script.js}"></script>
+</body>
+</html>

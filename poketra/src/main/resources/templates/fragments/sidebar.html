@@ -1,0 +1,325 @@
+<!-- sidebar -->
+<div class="fixed w-64 left-0 top-0 h-full bg-gray-900 p-4">
+    <div class="brand-logo">
+        <h5 class="flex justify-center underline decoration-dashed text-white">Pôketra</h5>
+    </div>
+    <div>
+        <ul class="mt-4">
+            <li class="mb-1 group active">
+                <a href="" class="flex items-center py-2 px-4 text-gray-300 hover:bg-gray-950 hover:text-gray-100 rounded-md group-[.active]:bg-gray-800 group-[.active]:text-white group-[.selected]:bg-gray-950 group-[.selected]:text-gray-100 sidebar-dropdown-toggle">
+                    <span class="text-sm">Look</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4 ml-auto group-[.selected]:rotate-90">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+                    </svg>  
+                </a>
+                <ul class="pl-7 mt-2 hidden group-[.selected]:block">
+                    <li class="mb-4">
+                        <a href="" th:href="@{/pageInsertionLook}" class="flex items-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-6 text-white mr-2">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14" />
+                            </svg>
+                            <span class="text-gray-300 text-sm">Insertion Look</span>
+                        </a>
+                    </li>
+                    <li class="mb-4">
+                        <a th:href="@{/pageInsertionDetailsLook}" class="flex items-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-6 text-white mr-2">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14" />
+                            </svg>
+                            <span class="text-gray-300 text-sm">Insertion Détails Look</span>
+                        </a>
+                    </li>
+                    <li class="mb-4">
+                        <a th:href="@{/getMatiereByLook}" class="flex items-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-6 text-white mr-2">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14" />
+                            </svg>
+                            <span class="text-gray-300 text-sm">Détails Look</span>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+            <li class="mb-1 group">
+                <a href="" class="flex items-center py-2 px-4 text-gray-300 hover:bg-gray-950 hover:text-gray-100 rounded-md group-[.active]:bg-gray-800 group-[.active]:text-white group-[.selected]:bg-gray-950 group-[.selected]:text-gray-100 sidebar-dropdown-toggle">
+                    <span class="text-sm">Matière</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4 ml-auto group-[.selected]:rotate-90">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+                    </svg>  
+                </a>
+                <ul class="pl-7 mt-2 hidden group-[.selected]:block">
+                    <li class="mb-4">
+                        <a th:href="@{/pageInsertionMatiere}" class="flex items-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-6 text-white mr-2">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14" />
+                            </svg>
+                            <span class="text-gray-300 text-sm">Insertion Matière</span>
+                        </a>
+                    </li>
+                    <li class="mb-4">
+                        <a th:href="@{/aboutMatiere}" class="flex items-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-6 text-white mr-2">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14" />
+                            </svg>
+                            <span class="text-gray-300 text-sm">A Propos Matière</span>
+                        </a>
+                    </li>
+                    <li class="mb-4">
+                        <a th:href="@{/pageInsertionPrixMatiere}" class="flex items-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-6 text-white mr-2">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14" />
+                            </svg>
+                            <span class="text-gray-300 text-sm">Insertion prix matière</span>
+                        </a>
+                    </li>
+                    <li class="mb-4">
+                        <a th:href="@{/pageInsertStockMatiere}" class="flex items-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-6 text-white mr-2">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14" />
+                            </svg>
+                            <span class="text-gray-300 text-sm">Insertion Stock Matière</span>
+                        </a>
+                    </li>
+                    <li class="mb-4">
+                        <a th:href="@{/detailsStockMatiere}" class="flex items-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-6 text-white mr-2">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14" />
+                            </svg>
+                            <span class="text-gray-300 text-sm">Détails Stock Matière</span>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+            <li class="mb-1 group">
+                <a href="" class="flex items-center py-2 px-4 text-gray-300 hover:bg-gray-950 hover:text-gray-100 rounded-md group-[.active]:bg-gray-800 group-[.active]:text-white group-[.selected]:bg-gray-950 group-[.selected]:text-gray-100 sidebar-dropdown-toggle">
+                    <span class="text-sm">Type</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4 ml-auto group-[.selected]:rotate-90">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+                    </svg>  
+                </a>
+                <ul class="pl-7 mt-2 hidden group-[.selected]:block">
+                    <li class="mb-4">
+                        <a th:href="@{/pageInsertionType}" class="flex items-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-6 text-white mr-2">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14" />
+                            </svg>
+                            <span class="text-gray-300 text-sm">Insertion Type</span>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+            <li class="mb-1 group">
+                <a href="" class="flex items-center py-2 px-4 text-gray-300 hover:bg-gray-950 hover:text-gray-100 rounded-md group-[.active]:bg-gray-800 group-[.active]:text-white group-[.selected]:bg-gray-950 group-[.selected]:text-gray-100 sidebar-dropdown-toggle">
+                    <span class="text-sm">Taille</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4 ml-auto group-[.selected]:rotate-90">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+                    </svg>  
+                </a>
+                <ul class="pl-7 mt-2 hidden group-[.selected]:block">
+                    <li class="mb-4">
+                        <a th:href="@{/pageInsertionTaille}" class="flex items-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-6 text-white mr-2">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14" />
+                            </svg>
+                            <span class="text-gray-300 text-sm">Insertion Taille</span>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+            <li class="mb-1 group">
+                <a href="" class="flex items-center py-2 px-4 text-gray-300 hover:bg-gray-950 hover:text-gray-100 rounded-md group-[.active]:bg-gray-800 group-[.active]:text-white group-[.selected]:bg-gray-950 group-[.selected]:text-gray-100 sidebar-dropdown-toggle">
+                    <span class="text-sm">Produit</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4 ml-auto group-[.selected]:rotate-90">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+                    </svg>  
+                </a>
+                <ul class="pl-7 mt-2 hidden group-[.selected]:block">
+                    <li class="mb-4">
+                        <a th:href="@{/pageInsertionProduit}" class="flex items-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-6 text-white mr-2">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14" />
+                            </svg>
+                            <span class="text-gray-300 text-sm">Insertion Produit</span>
+                        </a>
+                    </li>
+                    <li class="mb-4">
+                        <a th:href="@{/listProduitByPrix}" class="flex items-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-6 text-white mr-2">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14" />
+                            </svg>
+                            <span class="text-gray-300 text-sm">Prix poketra entre deux prix</span>
+                        </a>
+                    </li>
+                    <li class="mb-4">
+                        <a th:href="@{/pagefabrication}" class="flex items-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-6 text-white mr-2">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14" />
+                            </svg>
+                            <span class="text-gray-300 text-sm">Fabrication</span>
+                        </a>
+                    </li>
+                    <li class="mb-4">
+                        <a th:href="@{/pageInsertPrixVenteProduit}" class="flex items-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-6 text-white mr-2">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14" />
+                            </svg>
+                            <span class="text-gray-300 text-sm">Insertion prix de vente</span>
+                        </a>
+                    </li>
+                    <li class="mb-4">
+                        <a th:href="@{/pageInsertVente}" class="flex items-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-6 text-white mr-2">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14" />
+                            </svg>
+                            <span class="text-gray-300 text-sm">Insertion Vente</span>
+                        </a>
+                    </li>
+                    <li class="mb-4">
+                        <a th:href="@{/beneficeEntreDeuxPrix}" class="flex items-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-6 text-white mr-2">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14" />
+                            </svg>
+                            <span class="text-gray-300 text-sm">Bénéfice Produit</span>
+                        </a>
+                    </li>
+                    <li class="mb-4">
+                        <a th:href="@{/pageStatistiqueVente}" class="flex items-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-6 text-white mr-2">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14" />
+                            </svg>
+                            <span class="text-gray-300 text-sm">Statistique Vente</span>
+                        </a>
+                    </li>
+                    <li class="mb-4">
+                        <a th:href="@{/getResteStockProduit}" class="flex items-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-6 text-white mr-2">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14" />
+                            </svg>
+                            <span class="text-gray-300 text-sm">Reste Stock Produit</span>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+            <li class="mb-1 group">
+                <a href="" class="flex items-center py-2 px-4 text-gray-300 hover:bg-gray-950 hover:text-gray-100 rounded-md group-[.active]:bg-gray-800 group-[.active]:text-white group-[.selected]:bg-gray-950 group-[.selected]:text-gray-100 sidebar-dropdown-toggle">
+                    <span class="text-sm">Personnel</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4 ml-auto group-[.selected]:rotate-90">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+                    </svg>  
+                </a>
+                <ul class="pl-7 mt-2 hidden group-[.selected]:block">
+                    <li class="mb-4">
+                        <a th:href="@{/pageInsertPersonnel}" class="flex items-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-6 text-white mr-2">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14" />
+                            </svg>
+                            <span class="text-gray-300 text-sm">Insertion Personnel</span>
+                        </a>
+                    </li>
+                    <li class="mb-4">
+                        <a th:href="@{/pageInsertSalairePersonnel}" class="flex items-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-6 text-white mr-2">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14" />
+                            </svg>
+                            <span class="text-gray-300 text-sm">Insertion Salaire Personnel</span>
+                        </a>
+                    </li>
+                    <li class="mb-4">
+                        <a th:href="@{/pageNbPersonnelByTaille}" class="flex items-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-6 text-white mr-2">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14" />
+                            </svg>
+                            <span class="text-gray-300 text-sm">Nombre Personnel Par Rapport Au Taille</span>
+                        </a>
+                    </li>
+                    <li class="mb-4">
+                        <a th:href="@{/pageDureTravailPersonnel}" class="flex items-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-6 text-white mr-2">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14" />
+                            </svg>
+                            <span class="text-gray-300 text-sm">Duré Travail Personnel</span>
+                        </a>
+                    </li>
+                    <li class="mb-4">
+                        <a th:href="@{/listAllProduit}" class="flex items-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-6 text-white mr-2">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14" />
+                            </svg>
+                            <span class="text-gray-300 text-sm">Détails Production</span>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+            <li class="mb-1 group">
+                <a href="" class="flex items-center py-2 px-4 text-gray-300 hover:bg-gray-950 hover:text-gray-100 rounded-md group-[.active]:bg-gray-800 group-[.active]:text-white group-[.selected]:bg-gray-950 group-[.selected]:text-gray-100 sidebar-dropdown-toggle">
+                    <span class="text-sm">Embauche</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4 ml-auto group-[.selected]:rotate-90">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+                    </svg>  
+                </a>
+                <ul class="pl-7 mt-2 hidden group-[.selected]:block">
+                    <li class="mb-4">
+                        <a th:href="@{/pageInsertionEmploye}" class="flex items-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-6 text-white mr-2">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14" />
+                            </svg>
+                            <span class="text-gray-300 text-sm">Insertion Nouveau Employé</span>
+                        </a>
+                    </li>
+                    <!-- <li class="mb-4">
+                        <a th:href="@{/pageInsertEmbauche}" class="flex items-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-6 text-white mr-2">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14" />
+                            </svg>
+                            <span class="text-gray-300 text-sm">Insert Embauche</span>
+                        </a>
+                    </li> -->
+                </ul>
+            </li>
+            <li class="mb-1 group">
+                <a href="" class="flex items-center py-2 px-4 text-gray-300 hover:bg-gray-950 hover:text-gray-100 rounded-md group-[.active]:bg-gray-800 group-[.active]:text-white group-[.selected]:bg-gray-950 group-[.selected]:text-gray-100 sidebar-dropdown-toggle">
+                    <span class="text-sm">Profil</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4 ml-auto group-[.selected]:rotate-90">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+                    </svg>  
+                </a>
+                <ul class="pl-7 mt-2 hidden group-[.selected]:block">
+                    <li class="mb-4">
+                        <a th:href="@{/pageInsertProfil}" class="flex items-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-6 text-white mr-2">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14" />
+                            </svg>
+                            <span class="text-gray-300 text-sm">Insertion Profil</span>
+                        </a>
+                    </li>
+                    <li class="mb-4">
+                        <a th:href="@{/getAllProfilEmploye}" class="flex items-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-6 text-white mr-2">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14" />
+                            </svg>
+                            <span class="text-gray-300 text-sm">Profil des employés</span>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+            <li class="mb-1 group">
+                <a href="" class="flex items-center py-2 px-4 text-gray-300 hover:bg-gray-950 hover:text-gray-100 rounded-md group-[.active]:bg-gray-800 group-[.active]:text-white group-[.selected]:bg-gray-950 group-[.selected]:text-gray-100 sidebar-dropdown-toggle">
+                    <span class="text-sm">Client</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4 ml-auto group-[.selected]:rotate-90">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+                    </svg>  
+                </a>
+                <ul class="pl-7 mt-2 hidden group-[.selected]:block">
+                    <li class="mb-4">
+                        <a th:href="@{/pageInsertClient}" class="flex items-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-6 text-white mr-2">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14" />
+                            </svg>
+                            <span class="text-gray-300 text-sm">Insertion Client<span>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+            
+        </ul>
+    </div>
+</div>

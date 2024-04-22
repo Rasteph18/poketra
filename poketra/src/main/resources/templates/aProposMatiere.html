@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/css/style.css" th:href="@{/css/style.css}">
+    <title>About Matière</title>
+</head>
+<body>
+    <!-- sidebar -->
+    <div th:replace="~{fragments/sidebar.html}"></div>
+
+
+    <main class="w-[calc(100%-256px)] bg-gray-50 ml-64 min-h-screen">
+        <div class="container mx-auto">
+            <div class="title flex justify-center">
+                <h3>A propos matière</h3>
+            </div>
+            <div class="flex">
+                <div class="form-card mx-auto mt-4">
+                    <form th:action="@{/aboutMatiere}" method="get" class="space-y-8">
+                        <div class="input-field">
+                            <label for="idMatiere" class="lebel">Matière</label>
+                            <select name="idMatiere" id="idMatiere" class="input">
+                                <option th:each="matiere : ${listMatiere}" th:value="${matiere.id}" th:text="${matiere.nom}"></option>
+                            </select>
+                        </div>
+
+                        <div class="button flex justify-end">
+                            <button type="submit" class="btn">Valider</button>
+                        </div>
+                    </form>
+                </div>
+
+                <div class="details flex mx-auto mt-4 h-min">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th class="text-white bg-gray-950">Type</th>
+                                <th class="text-white bg-gray-950">Look</th>
+                                <th class="text-white bg-gray-950">Taille</th>
+                                <th class="text-white bg-gray-950">Quantité</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            <tr th:each="detailMatiere : ${aboutMatiere}">
+                                <td th:text="${detailMatiere.type}"></td>
+                                <td th:text="${detailMatiere.look}"></td>
+                                <td th:text="${detailMatiere.taille}"></td>
+                                <td th:text="${detailMatiere.quantite}"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            
+        </div>
+    </main>
+
+    <script src="../static/js/script.js" th:src="@{/js/script.js}"></script>
+</body>
+</html>

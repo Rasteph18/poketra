@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/css/style.css" th:href="@{/css/style.css}">
+    <title>Insertion Duré Travail</title>
+</head>
+<body>
+    <!-- sidebar -->
+    <div th:replace="~{fragments/sidebar.html}"></div>
+
+    <main class="w-[calc(100%-256px)] bg-gray-50 ml-64 min-h-screen">
+        <div class="container mx-auto">
+            <div class="title flex justify-center">
+                <h3>Insertion Duré Travail</h3>
+            </div>
+            <div class="form-card mx-auto mt-4">
+                <form th:action="@{/insertDureTravailPersonnel}" method="post" class="space-y-8">
+                    <div class="input-field">
+                        <label for="idLook" class="label">Look: </label>
+                        <select name="idLook" id="idLook" class="input">
+                            <option th:each="look : ${listLook}" th:value="${look.id}" th:text="${look.nom}"></option>
+                        </select>
+                    </div>
+
+                    <div class="input-field">
+                        <label for="dure" class="label">Duré</label>
+                        <input type="number" name="dure" id="dure" class="input">
+                    </div>
+
+                    <div class="button flex justify-end">
+                        <button type="submit" class="btn">Valider</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <script src="../static/js/script.js" th:src="@{/js/script.js}"></script>
+</body>
+</html>

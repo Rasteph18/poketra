@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/css/style.css" th:href="@{/css/style.css}">
+    <title>Reste Stock Produit</title>
+</head>
+<body>
+    <!-- sidebar -->
+    <div th:replace="~{fragments/sidebar.html}"></div>
+
+    <main class="w-[calc(100%-256px)] bg-gray-50 ml-64 min-h-screen">
+        <div class="title">
+            <h3 class="flex justify-center">Reste Stock Produit</h3>
+        </div>
+
+        <div class="flex justify-center mt-6">
+            <table>
+                <thead>
+                    <tr>
+                        <th class="text-white bg-gray-950">Type</th>
+                        <th class="text-white bg-gray-950">Look</th>
+                        <th class="text-white bg-gray-950">Taille</th>
+                        <th class="text-white bg-gray-950">Quantite</th>
+                    </tr>
+                </thead>
+        
+                <tbody>
+                    <tr th:each="list : ${listProduit}">
+                        <td th:text="${list.type}"></td>
+                        <td th:text="${list.look}"></td>
+                        <td th:text="${list.taille}"></td>
+                        <td th:text="${list.quantite}"></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </main>
+
+    <script src="../static/js/script.js" th:src="@{/js/script.js}"></script>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/css/style.css" th:href="@{/css/style.css}">
+    <title>Liste Profil Employe</title>
+</head>
+<body>
+
+    <!-- sidebar -->
+    <div th:replace="~{fragments/sidebar.html}"></div>
+
+    <main class="w-[calc(100%-256px)] bg-gray-50 ml-64 min-h-screen">
+        <div class="title">
+            <h3 class="flex justify-center">Liste Profil Employe</h3>
+        </div>
+
+        <div class="flex justify-center mt-4">
+            <table>
+                <thead>
+                    <tr>
+                        <th class="text-white bg-gray-950">Nom</th>
+                        <th class="text-white bg-gray-950">Prénom</th>
+                        <th class="text-white bg-gray-950">Date d'embauche</th>
+                        <th class="text-white bg-gray-950">Année de travail</th>
+                        <th class="text-white bg-gray-950">Poste</th>
+                        <th class="text-white bg-gray-950">Profil</th>
+                        <th class="text-white bg-gray-950">Salaire(Ar)</th>
+                    </tr>
+                </thead>
+        
+                <tbody>
+                    <tr th:each="list : ${profilEmploye}">
+                        <td th:text="${list.nomEmploye}"></td>
+                        <td th:text="${list.prenomEmploye}"></td>
+                        <td th:text="${list.dateEmbauche}"></td>
+                        <td th:text="${list.anneeExperience}"></td>
+                        <td th:text="${list.description}"></td>
+                        <td th:text="${list.nomProfil}"></td>
+                        <td th:text="${list.salaire}"></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </main>
+    
+    <script src="../static/js/script.js" th:src="@{/js/script.js}"></script>
+</body>
+</html>

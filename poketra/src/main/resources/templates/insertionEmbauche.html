@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/css/style.css" th:href="@{/css/style.css}">
+    <title>Détails embauche</title>
+</head>
+<body>
+    <!-- sidebar -->
+    <div th:replace="~{fragments/sidebar.html}"></div>
+
+    <main class="w-[calc(100%-256px)] bg-gray-50 ml-64 min-h-screen">
+        <div class="container mx-auto">
+            <div class="title flex justify-center">
+                <h3>Détails embauche</h3>
+            </div>
+            <div class="form-card mx-auto mt-4">
+                <form th:action="@{/insertEmbauche}" method="post" class="space-y-8">
+                    <div class="input-field">
+                        <label for="dateEmbauche" class="label">Date d'embauche</label>
+                        <input type="date" name="dateEmbauche" id="dateEmbauche" class="input">
+                    </div>
+
+                    <div class="input-field">
+                        <label for="idPersonnel" class="label">Poste</label>
+                        <select name="idPersonnel" id="idPersonnel">
+                            <option th:each="personnel : ${allPersonnel}" th:value="${personnel.id}" th:text="${personnel.description}"></option>
+                        </select>
+                    </div>
+
+                    <div class="button flex justify-end">
+                        <button type="submit" class="btn">Valider</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <script src="../static/js/script.js" th:src="@{/js/script.js}"></script>
+</body>
+</html>

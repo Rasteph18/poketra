@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/css/style.css" th:href="@{/css/style.css}">
+    <title>Statistique Nombre Vente</title>
+</head>
+<body>
+    <!-- sidebar -->
+    <div th:replace="~{fragments/sidebar.html}"></div>
+
+    <main class="w-[calc(100%-256px)] bg-gray-50 ml-64 min-h-screen">
+        <div class="title">
+            <h3 class="flex justify-center">Statistique Nombre Vente</h3>
+        </div>
+
+        <div class="content-form flex justify-center mt-6 mb-9">
+            <div class="form-card">
+                <form th:action="@{/pageStatistiqueVente}" method="get" class="space-y-7">
+                    <div class="input-field">
+                        <label for="idProduit" class="label">Produit</label>
+                        <select name="idProduit" id="idProduit" class="input">
+                            <option value="0">Tout les produits</option>
+                            <option th:each="produit : ${listProduit}" th:value="${produit.idProduit}" th:text="${produit.type} + ' ' + ${produit.look} + ' ' + ${produit.taille}"></option>
+                        </select>
+                    </div>
+    
+                    <div class="button flex justify-end">
+                        <button type="submit" class="btn">Valider</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <div class="produit mt-2 mb-12">
+            <h5 th:text="${descriProduit}" class="flex justify-center"></h5>
+        </div>
+
+        <div class="flex justify-center">
+            <div class="content-table mr-8 h-min">
+                <table>
+                    <thead>
+                        <tr>
+                            <th class="text-white bg-gray-950">Genre</th>
+                            <th class="text-white bg-gray-950">Nombre</th>
+                        </tr>
+                    </thead>
+            
+                    <tbody>
+                        <tr th:each="list : ${statistique}">
+                            <td th:text="${list.description}"></td>
+                            <td th:text="${list.nombre}"></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            
+            <div class="content-chart ml-8">
+                <canvas id="myChart" width="300" height="300"></canvas>
+            </div>
+        </div>
+    </main>
+
+    <script src="../static/js/script.js" th:src="@{/js/script.js}"></script>
+    <script src="../static/js/chart.umd.js" th:src="@{/js/chart.umd.js}"></script>
+    <script th:inline="javascript">
+        var statistiques = /*[[${statistique}]]*/ [];
+
+        var labels = statistiques.map(function(statistique) {
+            return statistique.description;
+        });
+
+        var values = statistiques.map(function(statistique) {
+            return statistique.nombre;
+        });
+
+
+        var backgroundColors = generateColors(statistiques);
+
+        var ctx = document.getElementById('myChart').getContext('2d');
+        var myChart = new Chart(ctx, {
+            type: 'pie',
+            data: {
+                labels: labels,
+                datasets: [{
+                    data: values,
+                    backgroundColor: backgroundColors,
+                }]
+            }
+        });
+
+        function generateColors(statistiques) {
+            return statistiques.map(function(statistique) {
+                return getColorByGenre(statistique.idGenre);
+            });
+        }
+
+        function getColorByGenre(idGenre) {
+            return idGenre === 1 ? 'rgba(0, 0, 255, 0.7)' : // Bleu si idGenre est 1
+                   idGenre === 2 ? 'rgba(255, 0, 0, 0.7)' : // Rouge si idGenre est 2
+                   'rgba(255, 255, 255, 0.7)'; // Autre couleur par défaut
+        }
+    </script>
+</body>
+</html>

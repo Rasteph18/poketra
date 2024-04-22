@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/css/style.css" th:href="@{/css/style.css}">
+    <title>Insertion Vente</title>
+</head>
+<body>
+    <!-- sidebar -->
+    <div th:replace="~{fragments/sidebar.html}"></div>
+
+    <main class="w-[calc(100%-256px)] bg-gray-50 ml-64 min-h-screen">
+        <div class="container mx-auto">
+            <div class="title flex justify-center">
+                <h3>Insertion Vente</h3>
+            </div>
+            <div class="form-card mx-auto mt-4">
+                <form th:action="@{/insertVente}" method="post" class="space-y-8">
+                    <div class="input-field">
+                        <label for="idProduit" class="label">Produit </label>
+                        <select name="idProduit" id="idProduit" class="input">
+                            <option th:each="produit : ${allProduit}" th:value="${produit.idProduit}" th:text="${produit.type} + ' ' + ${produit.look} + ' ' + ${produit.taille}"></option>
+                        </select>
+                    </div>
+
+                    <div class="input-field">
+                        <label for="quantite" class="label">Quantité</label>
+                        <input type="number" name="quantite" id="quantite" class="input">
+                    </div>
+
+                    <div class="input-field">
+                        <label for="dateVente" class="label">Date vente</label>
+                        <input type="date" name="dateVente" id="dateVente" class="input">
+                    </div>
+
+                    <div class="input-field">
+                        <label for="idClient" class="label">Client </label>
+                        <select name="idClient" id="idClient" class="input">
+                            <option th:each="client : ${allClient}" th:value="${client.id}" th:text="${client.nom}"></option>
+                        </select>
+                    </div>
+
+                    <div class="button flex justify-end">
+                        <button type="submit" class="btn">Valider</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <script src="../static/js/script.js" th:src="@{/js/script.js}"></script>
+</body>
+</html>
